@@ -1,4 +1,4 @@
-![Sayonika](https://media.discordapp.net/attachments/373669252554686464/458045399563763775/sayonika.png)
+![Sayonika](https://media.discordapp.net/attachments/373669252554686464/458045399563763775/sayonika.png?width=430&height=430)
 
 # Sayonika Server
 
