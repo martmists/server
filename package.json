@@ -29,9 +29,11 @@
     "@vertx/core": "^3.5.1",
     "@vertx/mysql-postgresql-client": "^3.5.1",
     "@vertx/web": "^3.5.1",
+    "typescript": "^2.9.2",
     "vertx-scripts": "^1.0.9"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "tslint": "^5.10.0"
   }
 }

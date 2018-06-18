@@ -21,6 +21,6 @@ The full contribution guide can be found [here](CONTRIBUTING.md)
 
 Sayonika, Sayonika chibi, and the Sayonika Logo are copyrighted under Creative Commons 3.0 Non-Commercial.
 
-Doki Doki Literature Club, The Doki Doki Literature Club Logo, and its characters are Copyright 2017-2018(c) Team Salvato.
+Doki Doki Literature Club, The Doki Doki Literature Club Logo, and its characters are Copyright 2017-2018 (c) Team Salvato.
 
 Sayonika is not associated with Team Salvato in any way, and the service complies with the Team Salvato Guidelines.
