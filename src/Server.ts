@@ -11,6 +11,6 @@ import {Router} from '@vertx/web';
 
 const app = Router.router(vertx);
 
-vertx.createHttpServer
+vertx.createHttpServer()
      .listen(process.env.PORT || 7821)
      .requestHandler(app);
