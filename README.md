@@ -4,8 +4,7 @@
 
 This repository contains the Sayonika server code.
 
-Sayonika server is built upon Eclipse Vert.x in place of commonly used HTTP servers on the market. 
-It's designed to be a asynchronous event-driven, server.
+Sayonika server is built with Express and :heart: and runs along with a API Gateway instance, like Janus.
 
 ## Running
 
