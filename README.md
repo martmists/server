@@ -13,7 +13,10 @@ Sayonika requires `vertx` to be ran. Go to the [Download](https://vertx.io/downl
 
 ## Contributing
 
-We use TypeScript for coding the server. You are required to follow the coding style set on our repository.
+We use JavaScript for coding the server. You are required to follow the coding style set on our repository.
+
+We rely on [Janus](https://github.com/hellofresh/janus) for the Gateway system. Please consult their repository
+if you find something off on the gateway, not here.
 
 The full contribution guide can be found [here](CONTRIBUTING.md)
 

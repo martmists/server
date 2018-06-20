@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "A Express-based REST API with a Go-based Gateway",
+  "main": "server.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sayo-nika/server.git"
+  },
+  "keywords": [
+    "sayonika",
+    "express",
+    "server"
+  ],
+  "author": "sr229",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sayo-nika/server/issues"
+  },
+  "homepage": "https://github.com/Sayo-nika/server#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
