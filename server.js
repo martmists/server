@@ -17,7 +17,6 @@ const Chalk = require('chalk').constructor;
 const clk = new Chalk({enabled: true});
 const moment = require('moment');
 const fs = require('fs');
-const path = require('path');
 const version = JSON.parse(fs.readFileSync('./package.json')).version;
 const app = express();
 
