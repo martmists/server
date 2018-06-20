@@ -15,11 +15,10 @@
         }
     },
     "globals": {
-        "mainDir": false,
-        "logger" : false,
-        "got": false,
-        "config": false,
-        "utils": false
+        "baseDir": false,
+        "baseRoute": false,
+        "router": false,
+        "db": false
     },
     "rules": {
         "no-console": 0,

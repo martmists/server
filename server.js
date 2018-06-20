@@ -8,24 +8,25 @@
 const express = require('express');
 const pg = require('pg-promise')();
 const http = require('http');
-const onFinished = require("on-finished");
-const bodyParser = require("body-parser");
+const onFinished = require('on-finished');
+const bodyParser = require('body-parser');
 const cluster = require('cluster');
 const os = require('os');
 const numCPUs = os.cpus().length;
 const Chalk = require('chalk').constructor;
-const clk = new Chalk({ enabled: true });
+const clk = new Chalk({enabled: true});
 const moment = require('moment');
 const fs = require('fs');
 const path = require('path');
 const version = JSON.parse(fs.readFileSync('./package.json')).version;
-const baseRoute = `/api/v${version.charAt(1)}`;
 const app = express();
 
 // globals - defined everywhere
+global.baseRoute = `/api/v${version.charAt(1)}`;
 global.router = express.Router();
 global.db = pg(process.env.POSTGRES_URL || 'postgres://admin:admin@localhost:5432/database');
 global.Promise = require('bluebird');
+global.baseDir = __dirname;
 
 const log = (req, res, next) => {
     const logRequest = () => {
@@ -41,7 +42,7 @@ const log = (req, res, next) => {
     next();
 };
 
-const rstat = (s) => {
+const rstat = s => {
     return s >= 500 ? clk.red.bold(s)
         : s >= 400 ? clk.yellow.bold(s)
             : s >= 300 ? clk.cyan.bold(s)
@@ -65,7 +66,7 @@ if (cluster.isMaster) {
 
     server.on('listening', () => console.log(`Started listening on port 3002`));
 
-    server.on('error', (err) => {
+    server.on('error', err => {
         if (err.syscall !== 'listen') return console.error(err);
 
         switch (err.code) {
@@ -90,11 +91,11 @@ if (cluster.isMaster) {
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(bodyParser.json());
 
-    /* routes */
+    /* Routes */
 
-    app.use(`${baseRoute}/submit`, require('./routes/modSubmit.js'));
-    app.use(`${baseRoute}/mods`, require('./routes/mods.js'));
-    app.use('/', require('./routes/index.js'));
+    app.use(`${baseRoute}/mods/submit`, require('./Routes/mods.js'));
+    app.use(`${baseRoute}/mods`, require('./Routes/mods.js'));
+    app.use('/', require('./Routes/index.js'));
 
     /* end */
     server.listen(9827 || process.env.PORT, '0.0.0.0');

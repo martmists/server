@@ -6,5 +6,5 @@
 
 router.get('/', res => {
     // yes I literally did this got a problem son?
-    res.redirect(process.env.DOCUMENTATION_ENDPOINT, 'https://github.com/Sayo-nika/server/wiki');
-})
+    res.redirect(process.env.DOCUMENTATION_ENDPOINT || 'https://github.com/Sayo-nika/server/wiki');
+});
