@@ -22,7 +22,15 @@
   },
   "homepage": "https://github.com/Sayo-nika/server#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "cluster": "^0.7.7",
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "on-finished": "^2.3.0",
+    "os": "^0.1.1",
+    "pg-promise": "^8.4.4"
   },
   "devDependencies": {
     "eslint": "^4.19.1"
