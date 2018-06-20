@@ -88,14 +88,13 @@ if (cluster.isMaster) {
     });
     
     app.use(log);
-    app.use(express.static(path.join(__dirname, 'public')));
     app.use(bodyParser.json());
 
-    /* Routes */
+    /* routes */
 
-    app.use(`${baseRoute}/mods/submit`, require('./Routes/mods.js'));
-    app.use(`${baseRoute}/mods`, require('./Routes/mods.js'));
-    app.use('/', require('./Routes/index.js'));
+    app.use(`${baseRoute}/mods/submit`, require('./routes/mods.js'));
+    app.use(`${baseRoute}/mods`, require('./routes/mods.js'));
+    app.use('/', require('./routes/index.js'));
 
     /* end */
     server.listen(9827 || process.env.PORT, '0.0.0.0');
