@@ -5,6 +5,7 @@
  */
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 import Mod from "./Mods";
+import Connections from './Connections';
 type Snowflake = number;
 type URL = string;
 
@@ -32,7 +33,7 @@ export class User extends BaseEntity
     moderator: boolean;
 
     @Column()
-    connections: Connection[];
+    connections: Connections[];
 
     @Column()
     mods: {
