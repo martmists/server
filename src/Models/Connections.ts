@@ -18,7 +18,6 @@ export default class Connections extends BaseEntity
     usernameOnService: string;
 
     @Column()
-
     accountHyperlink: URL;
 
 }
