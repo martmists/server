@@ -16,8 +16,8 @@ export class User extends BaseEntity
 
     @Column()
     username: string;
+    
     @Column()
-
     avatar?: URL;
     @Column()
     bio?: string;
