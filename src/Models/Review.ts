@@ -15,7 +15,7 @@ export default class Review extends BaseEntity
     id: Snowflake;
 
     @Column()
-    review: string;
+    content: string;
 
     @Column()
     rating: number;

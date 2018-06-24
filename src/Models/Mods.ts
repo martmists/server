@@ -24,10 +24,7 @@ export default class Mod extends BaseEntity
     icon?: URL;
 
     @Column()
-    trailer?: URL;
-
-    @Column()
-    pictures: URL[];
+    media?: URL[];
 
     @Column()
     description: string;
@@ -40,7 +37,7 @@ export default class Mod extends BaseEntity
 
     @Column()
     authors: SimpleUser[];
-    
+
     @Column()
     reviews: Review[];
 
