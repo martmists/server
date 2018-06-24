@@ -4,7 +4,7 @@
  * Licensed under BSD-3-Clause
  */
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
-import SimpleUser from './SimpleUser';
+import SimpleUser from "./SimpleUser";
 
 type Snowflake = number;
 type URL = string;

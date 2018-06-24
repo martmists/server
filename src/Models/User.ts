@@ -4,7 +4,7 @@
  * Licensed under BSD-3-Clause
  */
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
-import Mod from './Mods';
+import Mod from "./Mods";
 type Snowflake = number;
 type URL = string;
 
