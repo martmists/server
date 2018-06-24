@@ -40,6 +40,7 @@ export default class Mod extends BaseEntity
 
     @Column()
     authors: SimpleUser[];
+    
     @Column()
     reviews: Review[];
 
