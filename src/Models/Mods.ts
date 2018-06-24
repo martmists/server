@@ -5,6 +5,7 @@
  */
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 import SimpleUser from "./SimpleUser";
+import Review from "./Review";
 
 type Snowflake = number;
 type URL = string;
@@ -39,6 +40,8 @@ export default class Mod extends BaseEntity
 
     @Column()
     authors: SimpleUser[];
+    @Column()
+    reviews: Review[];
 
     @Column()
     verified: boolean;
