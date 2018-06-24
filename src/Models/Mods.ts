@@ -11,7 +11,8 @@ type URL = string;
 
 @Entity()
 
-export default class Mod extends BaseEntity {
+export default class Mod extends BaseEntity 
+{
     @PrimaryGeneratedColumn()
     id: Snowflake;
 
