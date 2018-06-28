@@ -1,0 +1,14 @@
+{
+    // https://github.com/rebornix/vscode-project-snippet
+    // https://code.visualstudio.com/docs/editor/userdefinedsnippets
+    "Copyright file header": {
+        "prefix": "sayo-copy",
+        "body": [
+            "/*",
+            " * Copyright 2018 (c) The Sayonika Project Authors",
+            " * Licensed under BSD-3-Clause",
+            " */"
+        ],
+        "description": "Sayonika copyright header"
+    }
+}
