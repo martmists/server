@@ -6,7 +6,7 @@
 import {Column, Entity, ManyToMany, OneToMany} from 'typeorm';
 
 import {DBBase} from '../Base';
-import {Snowflake, URL} from '../typedefs';
+import {IMedia, ModState, Snowflake, URL} from '../commonTypes';
 
 import Review from './Review';
 import User from './User';
@@ -20,19 +20,22 @@ export default class Mod extends DBBase {
     icon: URL;
 
     @Column()
+    media: IMedia[];
+
+    @Column()
     tagline: string;
 
     @Column()
     description: string;
 
     @Column()
+    website: URL;
+
+    @Column()
     category: string;
 
-    @Column()
-    state: string;
-
-    @Column()
-    website: URL;
+    @OneToMany(type => Review, review => review.mod)
+    reviews: Review[];
 
     @Column()
     owner: Snowflake;
@@ -43,12 +46,15 @@ export default class Mod extends DBBase {
     @Column()
     verified: boolean;
 
-    @OneToMany(type => Review, review => review.mod)
-    reviews: Review[];
+    @Column({
+        type: 'enum',
+        enum: ModState
+    })
+    devState: ModState;
 
-    @Column()
-    releaseDate: number;
-
-    @Column()
-    released: boolean;
+    @Column({
+        type: 'timestamp',
+        nullable: true
+    })
+    releaseDate: Date;
 }

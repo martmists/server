@@ -6,7 +6,7 @@
 import {Column, Entity, ManyToOne} from 'typeorm';
 
 import {DBBase} from '../Base';
-import {ConnectionServices} from '../typedefs';
+import {ConnectionServices} from '../commonTypes';
 
 import User from './User';
 
@@ -17,7 +17,7 @@ export default class Connections extends DBBase {
         enum: ConnectionServices,
         unique: true
     })
-    service: string;
+    service: ConnectionServices;
 
     @Column()
     username: string;

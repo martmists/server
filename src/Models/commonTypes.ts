@@ -12,3 +12,24 @@ export enum ConnectionServices {
     GitLab = 'gitlab',
     Reddit = 'reddit'
 }
+
+export enum ModCategories {
+    Todo
+}
+
+export enum ModState {
+    Planning,
+    InDevelopment,
+    Playtesting,
+    Released
+}
+
+export enum MediaTypes {
+    Image = 'image',
+    Video = 'video'
+}
+
+export interface IMedia {
+    type: MediaTypes;
+    url: URL;
+}

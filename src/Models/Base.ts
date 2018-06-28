@@ -5,7 +5,7 @@
 
 import {BaseEntity, CreateDateColumn, Entity, PrimaryGeneratedColumn} from 'typeorm';
 
-import {Snowflake} from './typedefs';
+import {Snowflake} from './commonTypes';
 
 /**
  * Base class for DB models with anything that needs a Snowflake ID.

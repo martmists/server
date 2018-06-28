@@ -24,6 +24,9 @@ export default class Review extends DBBase {
     @Column()
     downvotes: number;
 
+    @Column()
+    foundHelpful: number;
+
     @ManyToOne(type => User, user => user.reviews)
     author: User;
 
