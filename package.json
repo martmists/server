@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "node tests/test.js",
-    "lint": "eslint"
+    "lint": "tslint -p . && eslint"
   },
   "repository": {
     "type": "git",
@@ -32,11 +32,11 @@
     "on-finished": "^2.3.0",
     "os": "^0.1.1",
     "pg": "^7.4.3",
-    "tslint": "^5.10.0",
     "typeorm": "^0.2.7",
     "typescript": "^2.9.2"
   },
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "tslint": "^5.10.0"
   }
 }
