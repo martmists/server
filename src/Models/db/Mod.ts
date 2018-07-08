@@ -3,15 +3,16 @@
  * Licensed under BSD-3-Clause
  */
 
-import {Column, Entity, ManyToMany, OneToMany} from 'typeorm';
+import {Column, Entity, JoinColumn, JoinTable, ManyToMany, OneToMany} from 'typeorm';
 
 import {DBBase} from '../Base';
-import {IMedia, ModState, Snowflake, URL} from '../commonTypes';
+import {ModCategory, ModState, Snowflake, URL} from '../commonTypes';
 
+import Media from './Media';
 import Review from './Review';
 import User from './User';
 
-@Entity()
+@Entity('mods')
 export default class Mod extends DBBase {
     @Column()
     title: string;
@@ -19,8 +20,9 @@ export default class Mod extends DBBase {
     @Column()
     icon: URL;
 
-    @Column()
-    media: IMedia[];
+    @OneToMany(type => Media, media => media.mod)
+    @JoinColumn()
+    media: Media[];
 
     @Column()
     tagline: string;
@@ -31,10 +33,14 @@ export default class Mod extends DBBase {
     @Column()
     website: URL;
 
-    @Column()
-    category: string;
+    @Column({
+        type: 'enum',
+        enum: ModCategory
+    })
+    category: ModCategory;
 
     @OneToMany(type => Review, review => review.mod)
+    @JoinColumn()
     reviews: Review[];
 
     @Column()

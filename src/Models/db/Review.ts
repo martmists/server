@@ -3,33 +3,37 @@
  * Licensed under BSD-3-Clause
  */
 
-import {Column, Entity, ManyToOne} from 'typeorm';
+import {Check, Column, Entity, ManyToMany, ManyToOne} from 'typeorm';
 
 import {DBBase} from '../Base';
+import {Rating} from '../commonTypes';
 
 import Mod from './Mod';
 import User from './User';
 
-@Entity()
+@Entity('reviews')
+@Check('"rating" <= 5 AND MOD("rating", .5) = 0')
 export default class Review extends DBBase {
-    @Column()
-    rating: number;
+    @Column({
+        type: 'numeric'
+    })
+    rating: Rating;
 
     @Column()
     content: string;
 
-    @Column()
-    upvotes: number;
+    @ManyToMany(() => User, user => user.upvotedReviews)
+    upvotes: User[];
 
-    @Column()
-    downvotes: number;
+    @ManyToMany(() => User, user => user.downvotedReviews)
+    downvotes: User[];
 
-    @Column()
-    foundHelpful: number;
+    @ManyToMany(() => User, user => user.reviewsFoundHelpful)
+    foundHelpful: User[];
 
-    @ManyToOne(type => User, user => user.reviews)
+    @ManyToOne(() => User, user => user.reviews)
     author: User;
 
-    @ManyToOne(type => Mod, mod => mod.reviews)
+    @ManyToOne(() => Mod, mod => mod.reviews)
     mod: Mod;
 }

@@ -3,7 +3,7 @@
  * Licensed under BSD-3-Clause
  */
 
-import {Column, Entity, JoinTable, ManyToMany, OneToMany} from 'typeorm';
+import {Column, Entity, JoinColumn, JoinTable, ManyToMany, OneToMany} from 'typeorm';
 
 import {DBBase} from '../Base';
 
@@ -11,15 +11,19 @@ import Connection from './Connection';
 import Mod from './Mod';
 import Review from './Review';
 
-@Entity()
+@Entity('users')
 export default class User extends DBBase {
     @Column()
     username: string;
 
-    @Column({nullable: true})
+    @Column({
+        nullable: true
+    })
     avatar: string;
 
-    @Column()
+    @Column({
+        nullable: true
+    })
     bio: string;
 
     @Column()
@@ -31,18 +35,32 @@ export default class User extends DBBase {
     @Column()
     moderator: boolean;
 
-    @ManyToMany(type => Mod)
+    @ManyToMany(() => Mod)
     @JoinTable()
     mods: Mod[];
 
-    @ManyToMany(type => Mod)
+    @ManyToMany(() => Mod)
     @JoinTable()
     favourites: Mod[];
 
-    @OneToMany(type => Review, review => review.author)
+    @OneToMany(() => Review, review => review.author)
+    @JoinColumn()
     reviews: Review[];
 
-    @OneToMany(type => Connection, conn => conn.owner)
+    @ManyToMany(() => Review, review => review.upvotes)
+    @JoinColumn()
+    upvotedReviews: Review[];
+
+    @ManyToMany(() => Review, review => review.downvotes)
+    @JoinColumn()
+    downvotedReviews: Review[];
+
+    @ManyToMany(() => Review, review => review.foundHelpful)
+    @JoinTable()
+    reviewsFoundHelpful: Review[];
+
+    @OneToMany(() => Connection, conn => conn.owner)
+    @JoinColumn()
     connections: Connection[];
 
     @Column()

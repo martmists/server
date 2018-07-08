@@ -10,8 +10,8 @@ import {ConnectionServices} from '../commonTypes';
 
 import User from './User';
 
-@Entity()
-export default class Connections extends DBBase {
+@Entity('connections')
+export default class Connection extends DBBase {
     @Column({
         type: 'enum',
         enum: ConnectionServices,
