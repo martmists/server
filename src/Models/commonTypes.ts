@@ -13,7 +13,7 @@ export enum ConnectionServices {
     Reddit = 'reddit'
 }
 
-export enum ModCategories {
+export enum ModCategory {
     Todo
 }
 
@@ -27,9 +27,4 @@ export enum ModState {
 export enum MediaTypes {
     Image = 'image',
     Video = 'video'
-}
-
-export interface IMedia {
-    type: MediaTypes;
-    url: URL;
 }
