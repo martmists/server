@@ -10,5 +10,23 @@
             " */"
         ],
         "description": "Sayonika copyright header"
+    },
+    "Route signature": {
+        "prefix": "route-sig",
+        "body": [
+            "async (req, res) => {",
+            "\t$1",
+            "}"
+        ],
+        "description": "General function signature for Express routes"
+    },
+    "Middleware signature": {
+        "prefix": "middleware-sig",
+        "body": [
+            "async (req, res, next) => {",
+            "\t$1",
+            "}"
+        ],
+        "description": "General function signature for Express middleware"
     }
 }
