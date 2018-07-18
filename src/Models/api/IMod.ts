@@ -22,6 +22,7 @@ interface ICommonMod extends IAPIBase {
     owner: Snowflake;
     verified: boolean;
     devState: ModState;
+    downloadURL?: URL;
     releaseDate: Date;
 }
 
