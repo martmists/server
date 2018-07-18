@@ -19,7 +19,7 @@ export default class User extends DBBase {
     @Column({
         nullable: true
     })
-    avatar: string;
+    avatar: URL;
 
     @Column({
         nullable: true
