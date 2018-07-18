@@ -3,7 +3,7 @@
  * Licensed under BSD-3-Clause
  */
  
-import {Column, Entity, JoinColumn, JoinTable} from 'typeorm';
+import {Column, Entity} from 'typeorm';
 
 import {DBBase} from '../Base';
 import {Snowflake} from '../commonTypes';
