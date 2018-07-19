@@ -25,7 +25,9 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "express": "^4.16.3",
+    "hydra-js": "^0.1.5",
     "morgan": "^1.9.0",
+    "ory": "0.0.1",
     "pg": "^7.4.3",
     "typeorm": "^0.2.7",
     "typescript": "^2.9.2"
