@@ -16,7 +16,7 @@ function _checkReadiness() {
            await assert(res.body.status === 'ok');
            Promise.resolve('Health is OK - Link ready.')
         } catch(AssertionError) {
-           Promise.reject(`Health is not OK - Link not ready\n ${e.stack}`);
+           Promise.reject('Health is not OK - Link not ready.');
         }      
     })
 }
