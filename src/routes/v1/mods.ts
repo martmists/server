@@ -5,7 +5,7 @@
 
 import {Request, Response, Router} from 'express';
 
-import Mod from '../../Models/db/Mod';
+import Mod from '../../models/db/Mod';
 import {handlePagination} from '../queryHandlers';
 
 const router = Router();
