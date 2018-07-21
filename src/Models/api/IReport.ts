@@ -2,21 +2,16 @@
  * Copyright 2018 (c) The Sayonika Project Authors
  * Licensed under BSD-3-Clause
  */
- 
+
 import {IAPIBase} from '../Base';
-import {Snowflake} from '../commonTypes';
-import Mod from '../db/Mod';
+import {ReportClassification, Snowflake} from '../commonTypes';
+
 import IMod from './IMod';
 import ISimpleUser from './ISimpleUser';
 
-export enum ReportClassification {
-    IPViolation = 1,
-    BadModEntry = 2,
-    CopyrightedContentViolation = 3
-}
-
-export default interface IReport {
+export default interface IReport extends IAPIBase {
+    author: ISimpleUser;
     mod: IMod;
-    reportClassification: ReportClassification;
-    reportAuthor: ISimpleUser;
+    classification: ReportClassification;
+    body?: string;
 }

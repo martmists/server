@@ -28,3 +28,9 @@ export enum MediaTypes {
     Image = 'image',
     Video = 'video'
 }
+
+export enum ReportClassification {
+    IPViolation = 1,
+    BadModEntry = 2,
+    CopyrightedContentViolation = 3
+}
