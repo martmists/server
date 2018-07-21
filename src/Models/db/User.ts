@@ -63,12 +63,15 @@ export default class User extends DBBase {
     @JoinColumn()
     connections: Connection[];
 
-    @Column()
+    @Column({
+        select: false
+    })
     password: string;
 
     @Column({
         type: 'timestamp',
-        nullable: true
+        nullable: true,
+        select: false
     })
     lastPasswordReset: Date;
 }
