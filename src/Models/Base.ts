@@ -14,21 +14,19 @@ export abstract class DBSnowflake extends BaseEntity {
     @PrimaryGeneratedColumn({
         type: 'bigint'
     })
-    id: Snowflake;
+    id: Snowflake; // TODO: make snowflake generator thingy
 }
 
 /**
  * Base class for DB models with anything that needs both a Snowflake ID and a creation date.
  */
 export abstract class DBBase extends DBSnowflake {
-    @CreateDateColumn()
+    @CreateDateColumn({
+        select: false
+    })
     created: number;
 }
 
-export interface IAPISnowflake {
+export interface IAPIBase {
     id: Snowflake;
-}
-
-export interface IAPIBase extends IAPISnowflake {
-    created: number;
 }
