@@ -5,13 +5,15 @@
 
 import {Request, Response, Router} from 'express';
 
+import authh from './auth';
 import mods from './mods';
 import users from './users';
 
 const router = Router();
 
-router.use('/users', users);
+router.use('/auth', auth);
 router.use('/mods', mods);
+router.use('/users', users);
 
 router.get('/', (req: Request, res: Response) => {
     res.json({
