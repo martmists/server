@@ -51,10 +51,10 @@ export async function verifyPassword(password: string, saltedHash: string) {
     const match = await bcrypt.compare(password, saltedHash);
 
     if (!match) {
-        await JSON.stringify({consentAuth: false});
+        JSON.stringify({consentAuth: false});
         throw new Error('password does not match. Do not auth');
     } else {
-        await JSON.stringify({consentAuth: true});
+        JSON.stringify({consentAuth: true});
         console.log('password matches. Authentication consent granted.');
     }
 }
