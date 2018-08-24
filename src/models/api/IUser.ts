@@ -3,6 +3,8 @@
  * Licensed under BSD-3-Clause
  */
 
+import bcrypt = require('bcrypt');
+
 import {IAPIBase} from '../Base';
 import {Snowflake, URL} from '../commonTypes';
 import User from '../db/User';
@@ -37,4 +39,17 @@ export function convertFromDB(obj: User): IUser {
     ret.connections = obj.connections.map(convertConnection);
 
     return ret;
+}
+
+/**
+ * Compares entered plaintext password to bcrypted version.
+ * @param password password to check if salt exists. 
+ * @param saltedHash the salted hash saved in your database.
+ */
+export function verifyPassword(password: string, saltedHash: string) {
+    // first lets hash the resulting password to compare them both
+   bcrypt.hash(password, 25, (err, hash) => {
+           if (!bcrypt.compareSync(password, saltedHash)) throw new Error('password does not match stored salted password. Will not auth.');
+           else return; // do nothing atm.
+    });
 }

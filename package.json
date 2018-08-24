@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Sayo-nika/server#readme",
   "dependencies": {
+    "@types/bcrypt": "^2.0.0",
+    "bcrypt": "^3.0.0",
     "bluebird": "^3.5.1",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
