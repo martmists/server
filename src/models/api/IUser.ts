@@ -8,10 +8,10 @@ import bcrypt = require('bcrypt');
 import {IAPIBase} from '../Base';
 import {Snowflake, URL} from '../commonTypes';
 import User from '../db/User';
-import IReview from './IReview';
 
 import IConnection, {convertFromDB as convertConnection} from './IConnection';
 import IMod from './IMod';
+import IReview from './IReview';
 
 // Helps cut down code needed to copy common attributes straight from the DB result.
 interface ICommonUser extends IAPIBase {
