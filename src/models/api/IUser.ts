@@ -48,7 +48,7 @@ export function convertFromDB(obj: User): IUser {
  */
 export async function verifyPassword(password: string, saltedHash: string) {
     // first lets hash the resulting password to compare them both
-    let match = await bcrypt.compare(password, saltedHash);
+    const match = await bcrypt.compare(password, saltedHash);
 
     if (!match) {
         await JSON.stringify({consentAuth: false});
