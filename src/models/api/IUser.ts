@@ -47,14 +47,16 @@ export function convertFromDB(obj: User): IUser {
  * @param saltedHash the salted hash saved in your database.
  */
 export async function verifyPassword(password: string, saltedHash: string) {
-    // first lets hash the resulting password to compare them both
+    // first lets call this so we can have a shiny boolean
     const match = await bcrypt.compare(password, saltedHash);
 
     if (!match) {
-        JSON.stringify({consentAuth: false});
-        throw new Error('password does not match. Do not auth');
+        console.error('password does not match. Do not auth.');
+
+        return JSON.stringify({consentAuth: false});
     } else {
-        JSON.stringify({consentAuth: true});
         console.log('password matches. Authentication consent granted.');
+
+        return JSON.stringify({consentAuth: true});
     }
 }
