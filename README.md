@@ -4,17 +4,21 @@
 
 This repository contains the Sayonika server code.
 
-Sayonika server is built with Express and :heart: and runs along with a API Gateway instance, like Janus.
+Sayonika uses a Microservice layout for serving its mod listing. This means, each component has to be deployed individually but increases fault tolerance.
+
+Sayonika server is built with Express and :heart: and runs along with the ORY Authentication backend.
 
 ## Running
 
-Sayonika requires `vertx` to be ran. Go to the [Download](https://vertx.io/download/) page if you haven't.
+Sayonika requires Node.js, and TypeScript to run. Go to [Node.js website](https://nodejs.org) to get a copy.
+
+Then, clone the repository and run `npm install`.
 
 ## Contributing
 
-We use JavaScript for coding the server. You are required to follow the coding style set on our repository.
+We use TypeScript for coding the server. You are required to follow the coding style set on our repository.
 
-We rely on [Janus](https://github.com/hellofresh/janus) for the Gateway system. Please consult their repository
+We rely on [ORY](https://github.com/ory) for the Gateway system. Please consult their repository
 if you find something off on the gateway, not here.
 
 The full contribution guide can be found [here](CONTRIBUTING.md)

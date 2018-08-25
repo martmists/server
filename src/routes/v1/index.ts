@@ -5,7 +5,7 @@
 
 import {Request, Response, Router} from 'express';
 
-import authh from './auth';
+import auth from './auth';
 import mods from './mods';
 import users from './users';
 
